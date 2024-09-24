@@ -39,7 +39,8 @@
   .chat .inner-body .inner-content {
     background: #F1F1F1;
     margin-bottom: 10px;
-    max-width: 220px;
+    width: fit-content;
+    max-width: 1050px;
     padding: 5px 10px;
     border-radius: 15px;
     line-height: 1.4;

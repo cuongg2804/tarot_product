@@ -25,7 +25,7 @@ socket.on("SERVER_RETURN_REQ", (req) => {
 socket.on("SERVER_RETURN_RES", (res) => {
     const divRes = document.createElement("div");
     divRes.classList.add("inner-incoming");
-    divRes.innerHTML = `<div class="inner-content">${res}<div>`;
+    divRes.innerHTML = `<div class="inner-content style="white-space: pre-wrap;"">${res}<div>`;
     body.appendChild(divRes);
     new Viewer(divRes);
 })

@@ -6,7 +6,7 @@ const groq = new Groq({ apiKey: "gsk_IZzh1JQPiYZgGY6LLPOGWGdyb3FYWMLIxH34m1eXlN2
       messages: [
         {
           role: "user",
-          content: request + ". Nói bằng tiếng việt nhé",
+          content: request + ".Trả lời bằng tiếng việt, không được nói tiếng anh",
         },
       ],
       model: "llama3-8b-8192",
@@ -20,7 +20,7 @@ module.exports =  async (req,res) => {
             const respone = objectRespone.choices[0].message.content || "";
             
             socket.emit("SERVER_RETURN_REQ", resquest);
-            socket.emit("SERVER_RETURN_RES",  respone);
+            socket.emit("SERVER_RETURN_RES", respone);
         })
     })
     
