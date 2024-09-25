@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
-/* chat 
+/* chat  
 .chat {
     width: 100%;
     border: 1px solid #ddd;
@@ -84,20 +84,26 @@
   End chat */ 
 
   body {
-    background: linear-gradient(135deg, #2E2B5F, #1C1A30); /* Gradient for a mystical look */
+  /*  background: linear-gradient(135deg, #2b535f, #1C1A30); /* Gradient for a mystical look */
     color: #fff;
     font-family: 'Cormorant Garamond', serif; /* Classic, elegant font */
+  background-image:url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWZoOXhwNHplbmpzZGk3dG41azkyM3B0d3g0dzZvdTIyNXQxYWZzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U3qYN8S0j3bpK/giphy.webp")
+
   }
-  
+
+
   .container {
-    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-  }
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+
+    }
   
   .chat {
-    background: rgba(0, 0, 0, 0.7); 
-    border: 2px solid #FE5DA3;
+    background: rgba(0, 0, 0, 0.681); 
+    border: 2px solid #fff8fb;
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
@@ -107,12 +113,12 @@
   }
   
   .chat .inner-body {
-    max-height: 350px; /* Đặt chiều cao tối đa cho nội dung chat */
+/* Đặt chiều cao tối đa cho nội dung chat */
     overflow-y: scroll; /* Thêm thanh cuộn dọc cho nội dung */
     padding: 15px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
-    height: 500px;
+    height: 400px;
   }
   
   
@@ -138,15 +144,23 @@
   }
   
   .chat .inner-outgoing .inner-content {
-    background: rgba(254, 93, 163, 0.9);
-    color: #fff;
+    background: rgba(242, 236, 239, 0.9);
+    color: #0d0c0c;
     margin-left: auto;
+  }
+
+  .chat .inner-incoming .inner-content {
+
+  
+    color: #fff;
   }
   
   .chat .inner-foot {
     background: rgba(0, 0, 0, 0.8); /* Dark, mystical footer */
-    border-top: 1px solid #FE5DA3;
+    border-top: 0px solid #FE5DA3;
     padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px; 
   }
   
   .chat .inner-form input {
@@ -188,7 +202,7 @@
     color: #fff;
     opacity: 0.8;
   }
-
+ 
 
   
   
