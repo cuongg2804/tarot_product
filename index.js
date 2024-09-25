@@ -8,11 +8,14 @@ const dotenv = require("dotenv");
 const flash = require('express-flash');
 const http = require("http");
 const { Server } = require("socket.io");
+const database = require("./config/database");
+dotenv.config();
 //Socket
 const server = http.createServer(app);
 const io = new Server(server);
 global._io = io ;
 //EndSocket
+
 
 
 //ROUTER CLIENT
@@ -27,8 +30,10 @@ app.set("views", `${__dirname}/view`);
 app.use(methodOverride('_method'));
 
 ClientRouter(app);
+database.connect();
 
-const port = 5000 ;
+
+const port =  process.env.PORT ; 
 server.listen(port, () => {
     console.log(`Đã kết nối tới cổng: ${port}`);
 });

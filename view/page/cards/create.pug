@@ -1,0 +1,35 @@
+extends ../../layouts/default.pug
+block main
+  
+    h1(class="mb-4") Thêm mới thẻ
+
+    form(
+      action=`/create`
+      id="form-create-card"
+      method="POST"
+    )
+      div(class="form-group")
+        label(for="title") Tên thẻ
+        input(
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          require
+        )
+      div(
+        class="form-group" 
+      ) Link ảnh 
+        input(
+          type="text"
+          class="form-control"
+          id="image"
+          name="image"
+          require
+        )
+     
+      div(class="form-group")
+        button(
+          type="submit"
+          class="btn btn-primary"
+        ) Tạo mới

@@ -44,3 +44,18 @@ inputField.addEventListener('blur', () => {
 const chatBody = document.querySelector('.inner-body');
 
 chatBody.scrollTop = chatBody.scrollHeight; // Tự động cuộn xuống cuối khi có tin nhắn mới
+
+//Upload Imange 
+const uploadImage = document.querySelector("[upload-image]");
+if(uploadImage) {
+    const uploadImage_input = uploadImage.querySelector("[upload-image-input]");
+    console.log(uploadImage_input);
+    const img =  uploadImage.querySelector("[upload-image-preview]");
+   console.log(img);
+    uploadImage_input.addEventListener("change", () => {
+        const file = uploadImage_input.files[0] ;
+        if(file){
+            img.src = URL.createObjectURL(file);
+        }
+    })
+}
