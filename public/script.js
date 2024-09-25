@@ -29,3 +29,18 @@ socket.on("SERVER_RETURN_RES", (res) => {
     body.appendChild(divRes);
     new Viewer(divRes);
 })
+
+const inputField = document.querySelector('.inner-form input');
+
+inputField.addEventListener('focus', () => {
+  inputField.style.boxShadow = '0 0 10px #FE5DA3';
+});
+
+inputField.addEventListener('blur', () => {
+  inputField.style.boxShadow = 'none';
+});
+
+
+const chatBody = document.querySelector('.inner-body');
+
+chatBody.scrollTop = chatBody.scrollHeight; // Tự động cuộn xuống cuối khi có tin nhắn mới

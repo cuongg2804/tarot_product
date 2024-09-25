@@ -1,4 +1,5 @@
-/* chat */
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+/* chat 
 .chat {
     width: 100%;
     border: 1px solid #ddd;
@@ -80,4 +81,115 @@
     padding: 0 10px;
     cursor: pointer;
   }
-  /* End chat */
+  End chat */ 
+
+  body {
+    background: linear-gradient(135deg, #2E2B5F, #1C1A30); /* Gradient for a mystical look */
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif; /* Classic, elegant font */
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .chat {
+    background: rgba(0, 0, 0, 0.7); 
+    border: 2px solid #FE5DA3;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    height: 500px; /* Chiều cao khung chat */
+    width: 800px; /* Chiều rộng khung chat (có thể thay đổi tùy ý) */
+    position: relative; /* Giữ vị trí tương đối để phù hợp với flexbox */
+  }
+  
+  .chat .inner-body {
+    max-height: 350px; /* Đặt chiều cao tối đa cho nội dung chat */
+    overflow-y: scroll; /* Thêm thanh cuộn dọc cho nội dung */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    height: 500px;
+  }
+  
+  
+  .chat .inner-head .inner-avatar {
+    background: #FE5DA3;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    text-align: center;
+    line-height: 32px;
+    box-shadow: 0 0 10px rgba(254, 93, 163, 0.8); /* Neon-like glow */
+  }
+  
+  .chat .inner-content {
+    background: rgba(255, 255, 255, 0.1); /* Transparent chat bubbles */
+    padding: 10px;
+    border-radius: 15px;
+    width: fit-content;
+    max-width: 70%;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .chat .inner-outgoing .inner-content {
+    background: rgba(254, 93, 163, 0.9);
+    color: #fff;
+    margin-left: auto;
+  }
+  
+  .chat .inner-foot {
+    background: rgba(0, 0, 0, 0.8); /* Dark, mystical footer */
+    border-top: 1px solid #FE5DA3;
+    padding: 10px;
+  }
+  
+  .chat .inner-form input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #FE5DA3;
+    border-radius: 15px;
+    padding: 10px;
+    color: #fff;
+    width:680px;
+  }
+  
+  .chat .inner-form input::placeholder {
+    color: #ddd;
+  }
+  
+  .chat .inner-form button {
+    background: #FE5DA3;
+    color: #fff;
+    border-radius: 15px;
+    padding: 10px 20px;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  header {
+    text-align: center;
+    font-size: 3rem;
+    color: #FE5DA3;
+    font-family: "Coiny", system-ui;
+    margin-bottom: 40px;
+
+}
+
+
+  footer {
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.8;
+  }
+
+
+  
+  
+  

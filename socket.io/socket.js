@@ -6,7 +6,7 @@ const groq = new Groq({ apiKey: "gsk_IZzh1JQPiYZgGY6LLPOGWGdyb3FYWMLIxH34m1eXlN2
       messages: [
         {
           role: "user",
-          content: request + ".Trả lời bằng tiếng việt, không được nói tiếng anh",
+          content: request + ". Nói bằng tiếng việt",
         },
       ],
       model: "llama3-8b-8192",
@@ -17,8 +17,8 @@ module.exports =  async (req,res) => {
     _io.once('connection', (socket) => {
         socket.on("CLIENT_SEND_MESSAGE", async (resquest) => {
             const objectRespone = await getGroqChatCompletion(resquest);
-            const respone = objectRespone.choices[0].message.content || "";
-            
+            const respone = (objectRespone.choices[0].message.content || "").replace(/\n/g, '<br>');
+
             socket.emit("SERVER_RETURN_REQ", resquest);
             socket.emit("SERVER_RETURN_RES", respone);
         })
