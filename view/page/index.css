@@ -1,0 +1,71 @@
+body {
+    background-color: #f0e6f6;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #4a0e78;
+    font-weight: bold;
+}
+
+.form-control:focus {
+    border-color: #4a0e78;
+    box-shadow: 0 0 0 0.2rem rgba(74, 14, 120, 0.25);
+}
+
+.btn-primary {
+    background-color: #4a0e78;
+    border-color: #4a0e78;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #3a0b5e;
+    border-color: #3a0b5e;
+}
+
+.tarot-card {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.tarot-card:hover, .tarot-card:focus {
+    transform: translateY(-10px);
+}
+
+.tarot-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .tarot-card img {
+        height: 150px;
+    }
+}
+
+.card-title {
+    text-align: center;
+    font-weight: bold;
+    color: #4a0e78;
+}
+
+#shuffleDrawBtn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+#errorMessage {
+    font-size: 0.9em;
+}
+
+#cardContainer {
+    min-height: 250px;
+}
