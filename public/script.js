@@ -109,7 +109,8 @@ if(form_send_data){
         
         const input = form_send_data.querySelector("input[name='content']");
         input.value  +=  ";" +strtitleCard;
-        console.log(input.value);
+
          form_send_data.submit();
+         input.value="";
     })
 }
