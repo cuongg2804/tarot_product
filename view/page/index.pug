@@ -22,11 +22,11 @@ block main
                 aria-describedby="questionHelp"
                 rows="5"
                 )
-            //- .col-md-2.text-right
-            //-   button.btn.btn-primary.d-flex.align-items-center.justiy-content-center(
-            //-     style="background-color: #5A2D81; color: white; border-radius: 8px; padding: 8px 50px;" btnRead) Lời giải
+            .col-md-2.text-right
+              button.btn.btn-primary.d-flex.align-items-center.justiy-content-center(
+                style="background-color: #5A2D81; color: white; border-radius: 8px; padding: 8px 50px; white-space: nowrap;" btnRead) Lời giải
 
         #questionHelp.form-text Chọn bài
-        button(btnDraw)#shuffleDrawBtn.btn.btn-primary.w-100.mb-4 Xào bài
+        button(btnDraw)#shuffleDrawBtn.btn.btn-primary.w-100.mb-4.col-md-2 Xào bài
   #cardContainer.row
     div(cards=Cards)
