@@ -15,13 +15,13 @@ const groq = new Groq({ apiKey: process.env.API_KEY });
 
 module.exports =  async (req,res) => {
     _io.once('connection', (socket) => {
+      
         socket.on("CLIENT_SEND_MESSAGE", async (resquest) => {
+
             const objectRespone = await getGroqChatCompletion(resquest);
             const respone = (objectRespone.choices[0].message.content || "").replace(/\n/g, '<br>');
-
             socket.emit("SERVER_RETURN_REQ", resquest);
             socket.emit("SERVER_RETURN_RES", respone);
         })
     })
-    
 }
