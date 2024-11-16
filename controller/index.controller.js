@@ -13,6 +13,15 @@ module.exports.index =async (req, res) => {
     });
 }
 
+module.exports.getCard  =async (req, res) => {
+    const Cards = await Card.aggregate([{ $sample: { size: 3 } }]);
+    console.log(Cards);
+    res.json({
+        code : 200,
+        card : Cards
+    })
+}
+
 module.exports.read =async (req, res) => {
     const content_card = req.body.content.split(";");
     const content = content_card[0]; 

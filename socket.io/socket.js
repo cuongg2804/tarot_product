@@ -1,25 +1,31 @@
-const Groq = require("groq-sdk")
-const groq = new Groq({ apiKey: process.env.API_KEY });
+const {GoogleGenerativeAI} = require("@google/generative-ai");
 
- async function getGroqChatCompletion(request) {
-    return groq.chat.completions.create({
-      messages: [
-        {
-          role: "user",
-          content: request + ". Nói bằng tiếng việt",
-        },
-      ],
-      model: "llama3-8b-8192",
-    });
-  }
+const apiKey = process.env.API_KEY;
+const genAI = new GoogleGenerativeAI(apiKey);
+
+const model = genAI.getGenerativeModel({
+  model: "gemini-1.5-flash-8b",
+});
+
+const generationConfig = {
+  temperature: 1,
+  topP: 0.95,
+  topK: 40,
+  maxOutputTokens: 8192,
+  responseMimeType: "text/plain",
+};
+
 
 module.exports =  async (req,res) => {
     _io.once('connection', (socket) => {
       
         socket.on("CLIENT_SEND_MESSAGE", async (resquest) => {
 
-            const objectRespone = await getGroqChatCompletion(resquest);
-            const respone = (objectRespone.choices[0].message.content || "").replace(/\n/g, '<br>');
+            const objectRespone = await model.generateContent(resquest);
+
+            const respone = (objectRespone.response.text()|| "").replace(/\n/g, '<br>');
+            
+
             socket.emit("SERVER_RETURN_REQ", resquest);
             socket.emit("SERVER_RETURN_RES", respone);
         })

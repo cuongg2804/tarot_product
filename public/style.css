@@ -1,251 +1,185 @@
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
-/* chat  
-.chat {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  .chat .inner-head {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .chat .inner-head .inner-avatar {
-    background: #FE5DA3;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: inline-block;
-    font-weight: 700;
-    text-align: center;
-    line-height: 32px;
-    color: #fff;
-  }
-  
-  .chat .inner-head .inner-name {
-    display: inline-block;
-    font-weight: 600;
-    margin-left: 5px;
-  }
-  
-  .chat .inner-body {
-    padding: 10px;
-  }
-  
-  .chat .inner-body .inner-name {
-    font-weight: 600;
-  }
-  
-  .chat .inner-body .inner-content {
-    background: #F1F1F1;
-    margin-bottom: 10px;
-    width: fit-content;
-    max-width: 1050px;
-    padding: 5px 10px;
-    border-radius: 15px;
-    line-height: 1.4;
-  }
-  
-  .chat .inner-outgoing .inner-content {
-    margin-left: auto;
-    background: #FE5DA3;
-    color: #fff;
-  }
-  
-  .chat .inner-foot {
-    border-top: 1px solid #ddd;
-    padding: 10px;
-  }
-  
-  .chat .inner-form {
-    display: flex;
-    align-items: center;
-  }
-  
-  .chat .inner-form input {
-    flex: 1;
-    height: 32px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    padding: 0 10px;
-    outline: none;
-  }
-  
-  .chat .inner-form button {
-    border-radius: 15px;
-    border: 1px solid #FE5DA3;
-    background: #FE5DA3;
-    color: #fff;
-    height: 32px;
-    padding: 0 10px;
-    cursor: pointer;
-  }
-  End chat */ 
 
-  /*--------*/
-  .chat {
-    background: rgba(0, 0, 0, 0.681); 
-    border: 2px solid #fff8fb;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
-    height: 500px; /* Chiều cao khung chat */
-    width: 800px; /* Chiều rộng khung chat (có thể thay đổi tùy ý) */
-    position: relative; /* Giữ vị trí tương đối để phù hợp với flexbox */
-  }
-  
-  .chat .inner-body {
-/* Đặt chiều cao tối đa cho nội dung chat */
-    overflow-y: scroll; /* Thêm thanh cuộn dọc cho nội dung */
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    height: 400px;
-  }
-  
-  
-  .chat .inner-head .inner-avatar {
-    background: #FE5DA3;
-    color: #fff;
-    border-radius: 50%;
-    padding: 5px;
-    text-align: center;
-    line-height: 32px;
-    box-shadow: 0 0 10px rgba(254, 93, 163, 0.8); /* Neon-like glow */
-  }
-  
-  .chat .inner-content {
-    background: rgba(255, 255, 255, 0.1); /* Transparent chat bubbles */
-    padding: 10px;
-    border-radius: 15px;
-    width: fit-content;
-    max-width: 70%;
-    margin-bottom: 15px;
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  .chat .inner-outgoing .inner-content {
-    background: rgba(242, 236, 239, 0.9);
-    color: #0d0c0c;
-    margin-left: auto;
-  }
-
-  .chat .inner-incoming .inner-content {
-
-  
-    color: #fff;
-  }
-  
-  .chat .inner-foot {
-    background: rgba(0, 0, 0, 0.8); /* Dark, mystical footer */
-    border-top: 0px solid #FE5DA3;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 10px; 
-  }
-  
-  .chat .inner-form input {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #FE5DA3;
-    border-radius: 15px;
-    padding: 10px;
-    color: #fff;
-    width:680px;
-  }
-  
-  .chat .inner-form input::placeholder {
-    color: #ddd;
-  }
-  
-  .chat .inner-form button {
-    background: #FE5DA3;
-    color: #fff;
-    border-radius: 15px;
-    padding: 10px 20px;
-    border: none;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  header {
-    text-align: center;
-    font-size: 3rem;
-    color: #FE5DA3;
-    font-family: "Coiny", system-ui;
-    margin-bottom: 40px;
-
-}
-
-
-  footer {
-    text-align: center;
-    font-size: 1rem;
-    color: #fff;
-    opacity: 0.8;
-  }
-
-  /*--------*/
-
-  body {
-    background-color: #f0e6f6;
+body {
+  background-color: #f0e6f6;
     color: #333;
     font-family: 'Arial', sans-serif;
     background-image:url("https://t4.ftcdn.net/jpg/04/15/80/49/240_F_415804937_AmBLry1D1XN5AU7zCPGnYRAmkEh5WtFW.jpg")
-
 }
 
-.container.my-5{
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+header {
+  text-align: center;
+  font-size: 3rem;
+  color: #FE5DA3;
+  font-family: "Coiny", sans-serif;
+  margin: 20px 0 40px;
+}
+
+footer {
+  text-align: center;
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.8;
+  margin-top: 30px;
+}
+
+.chat {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #fff8fb;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  height: 500px;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.chat .inner-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.chat .inner-head .inner-avatar {
+  background: #FE5DA3;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(254, 93, 163, 0.8);
+}
+
+.chat .inner-body {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  height: 400px;
+  overflow-y: auto;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.chat .inner-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 15px;
+  width: fit-content;
+  max-width: 70%;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.chat .inner-outgoing .inner-content {
+  background: rgba(242, 236, 239, 0.9);
+  color: #0d0c0c;
+  margin-left: auto;
+}
+
+.chat .inner-foot {
+  background: rgba(0, 0, 0, 0.8);
+  border-top: 2px solid #FE5DA3;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.chat .inner-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat .inner-form input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #FE5DA3;
+  border-radius: 15px;
+  padding: 10px;
+  color: #fff;
+  flex: 1;
+}
+
+.chat .inner-form input::placeholder {
+  color: #ddd;
+}
+
+.chat .inner-form button {
+  background: #FE5DA3;
+  color: #fff;
+  border-radius: 15px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chat .inner-form button:hover {
+  background: #d24d85;
+}
+
+.container.my-5 {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 h1 {
-    color: #4a0e78;
-    font-weight: bold;
+  color: #4a0e78;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .form-control:focus {
-    border-color: #4a0e78;
-    box-shadow: 0 0 0 0.2rem rgba(74, 14, 120, 0.25);
+  border-color: #4a0e78;
+  box-shadow: 0 0 0 0.2rem rgba(74, 14, 120, 0.25);
 }
 
 .btn-primary {
-    background-color: #4a0e78;
-    border-color: #4a0e78;
+  background-color: #4a0e78;
+  border-color: #4a0e78;
 }
 
-.btn-primary:hover, .btn-primary:focus {
-    background-color: #3a0b5e;
-    border-color: #3a0b5e;
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #3a0b5e;
+  border-color: #3a0b5e;
 }
 
 .tarot-card {
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
-  width: 65%; /* Giảm kích thước thẻ bài, có thể điều chỉnh con số này */
-  margin: 0 auto; /* Đảm bảo căn giữa thẻ bài */
+  width: 65%;
+  margin: 20px auto;
+  display: block;
 }
 
-.tarot-card:hover, .tarot-card:focus {
+.tarot-card:hover,
+.tarot-card:focus {
   transform: translateY(-10px);
 }
 
 .tarot-card img {
-  width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của thẻ */
-  height: auto; /* Giữ nguyên tỷ lệ của ảnh */
-  object-fit: cover; /* Nếu bạn vẫn muốn ảnh vừa khít khung */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 @media (max-width: 767px) {
-  .tarot-card {
-      width: 90%; /* Tự động nhỏ lại trên màn hình nhỏ */
+  .chat {
+    width: 95%;
   }
 
-  .tarot-card img {
-      height: auto;
+  .tarot-card {
+    width: 90%;
   }
 }
 
@@ -253,20 +187,26 @@ h1 {
   text-align: center;
   font-weight: bold;
   color: #4a0e78;
+  margin-top: 10px;
+}
+
+#errorMessage {
+  font-size: 0.9em;
+  color: red;
+  text-align: center;
 }
 
 #shuffleDrawBtn {
   width: 100%;
   padding: 10px;
   font-size: 1.1em;
+  background-color: #4a0e78;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-#errorMessage {
-  font-size: 0.9em;
-}
-
-#cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+#shuffleDrawBtn:hover {
+  background-color: #3a0b5e;
 }

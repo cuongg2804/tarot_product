@@ -4,6 +4,7 @@ module.exports = (app) => {
 
     app.get("/", ChatController.index );
 
+    app.get("/getCard", ChatController.getCard );
 
     app.post("/read", ChatController.read );
     

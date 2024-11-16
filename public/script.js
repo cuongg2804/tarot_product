@@ -49,9 +49,9 @@ const chatBody = document.querySelector('.inner-body');
 const uploadImage = document.querySelector("[upload-image]");
 if(uploadImage) {
     const uploadImage_input = uploadImage.querySelector("[upload-image-input]");
-    console.log(uploadImage_input);
+   
     const img =  uploadImage.querySelector("[upload-image-preview]");
-   console.log(img);
+
     uploadImage_input.addEventListener("change", () => {
         const file = uploadImage_input.files[0] ;
         if(file){
@@ -60,35 +60,38 @@ if(uploadImage) {
     })
 }
 
-const Cards = document.querySelector("div[cards]");
 
-if(Cards){
     const cardContainer = document.getElementById('cardContainer');
     const buttonDraw = document.querySelector("button[btndraw]");
-    const dataCard = Cards.getAttribute("cards");
-    const tarotCards = JSON.parse(dataCard);
-
+    if(buttonDraw){
     buttonDraw.addEventListener("click", () => {
-        tarotCards.forEach(card => {
-          const divCard = document.createElement("div");
-          divCard.className = 'col-sm-4 mb-3';
-      
-          // Gán innerHTML cho divCard
-          divCard.innerHTML = `
-            <div class="card tarot-card" tabindex="0">
-              <img src="${card.linkImage}" class="card-img-top" alt="Tarot Card">
-              <div class="card-body">
-                <h5 class="card-title">${card.title}</h5>
-              </div>
-            </div>
-          `;
-      
-          // Thêm divCard vào cardContainer
-          cardContainer.append(divCard);
-          return;
-        });
-      });      
-}
+        cardContainer.innerHTML = "";
+        fetch("/getCard").
+        then(res => res.json())
+        .then(data => {
+            data.card.forEach(card => {
+                const divCard = document.createElement("div");
+                divCard.className = `col-sm-4 mb-3 card tarot-card` ;
+                divCard.setAttribute('data-title', card.title);
+            
+                // Gán innerHTML cho divCard
+                divCard.innerHTML = `
+                  
+                    <img src="${card.linkImage}" class="card-img-top" alt="Tarot Card">
+                    <div class="card-body">
+                      <h5 class="card-title" >${card.title}</h5>
+                    </div>
+                  
+                `;
+            
+                // Thêm divCard vào cardContainer
+                cardContainer.append(divCard);
+                return;
+              });
+              
+                
+        })
+});   }  
 
 
 const btnRead = document.querySelector("button[btnRead]");
@@ -97,13 +100,16 @@ const form_send_data = document.querySelector("form[form-send-data] ");
 if(form_send_data){
     form_send_data.addEventListener("submit", (event)=>{
         event.preventDefault();
-        const dataCard = Cards.getAttribute("cards");
-        const tarotCards = JSON.parse(dataCard);
+        const cardList = document.querySelector("div[id='cardContainer']");
+        const card = cardList.querySelectorAll("[data-title]");
 
         const titleCard = [];
-        tarotCards.forEach(card =>{
-            titleCard.push(card.title)
+        card.forEach(item =>{
+            const title = item.getAttribute("data-title");
+            titleCard.push(title);
         })
+
+
 
         const strtitleCard = titleCard.join("; ");
         
@@ -114,3 +120,6 @@ if(form_send_data){
          input.value="";
     })
 }
+
+
+
