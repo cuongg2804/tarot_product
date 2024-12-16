@@ -7,9 +7,10 @@ block main
       .col-12
           .chat()
             .inner-body
-            
+                div(class="inner-content inner-incoming") !{response}
             .inner-foot
               form(
+                form-send-request
                 class="inner-form"
                 action=""
               )

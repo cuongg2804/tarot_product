@@ -8,20 +8,17 @@ block main
       .mb-3
         form(
           form-send-data
-          class="inner-form"
           action="/read"
-          method="POST"
-          
         )
           label.form-label(for='questionInput') Câu hỏi:
           .row
             .col-md-10
-              input.form-control(
-                placeholder="Nhập nội dung..." 
+              input(
+                type="text"
+                class="form-control"
+                id="content"
                 name="content"
-                aria-describedby="questionHelp"
-                rows="5"
-                )
+              ) 
             .col-md-2.text-right
               button.btn.btn-primary.d-flex.align-items-center.justiy-content-center(
                 style="background-color: #5A2D81; color: white; border-radius: 8px; padding: 8px 50px; white-space: nowrap;" btnRead) Lời giải
@@ -29,4 +26,4 @@ block main
         #questionHelp.form-text Chọn bài
         button(btnDraw)#shuffleDrawBtn.btn.btn-primary.w-100.mb-4.col-md-2 Xào bài
   #cardContainer.row
-    //- div(cards=Cards)
+   
